@@ -1,0 +1,27 @@
+body {
+  max-height: 33.3vh;
+  background-size: cover;
+  font-family: sans-serif;
+  margin-top: 80px;
+  padding: 30px;
+}
+
+/* Header */
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  border-bottom:  2px solid red;
+}
+
+header * {
+  display: inline;
+  margin: 0 auto;
+}
+
+/* End of Header */
