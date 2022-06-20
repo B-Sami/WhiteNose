@@ -25,3 +25,23 @@ header * {
 }
 
 /* End of Header */
+
+/* Footer */
+
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: #222;
+  text-align: center;
+  padding: 5px;
+}
+
+footer *{
+  padding: 30px;
+  display: inline;
+  margin: 0 auto;
+}
+
+/* End of Footer */
