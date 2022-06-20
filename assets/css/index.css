@@ -1,9 +1,19 @@
 body {
   max-height: 33.3vh;
   background-size: cover;
+  color: white;
   font-family: sans-serif;
   margin-top: 80px;
   padding: 30px;
+  animation: myfirst 20s infinite;
+}
+
+@keyframes myfirst
+{
+  0%      {background:#2A80BA;}
+  25%     {background:#F9BE14;}
+  75%     {background:#5CE5B4;}
+  100%    {background:#EA705B;}
 }
 
 /* Header */
@@ -16,7 +26,7 @@ header {
   height: 80px;
   display: flex;
   align-items: center;
-  border-bottom:  2px solid red;
+  box-shadow: 0 2px 2px -2px white;
 }
 
 header * {
@@ -26,6 +36,19 @@ header * {
 
 /* End of Header */
 
+/* Images */
+img { 
+  filter: invert(298%) sepia(152%) saturate(40%) hue-rotate(300deg) brightness(94%) contrast(245%);
+} 
+/* End of Images */
+
+/* Main */
+pomodoro {
+  height: 50%;
+}
+
+/* End of Main */
+
 /* Footer */
 
 footer {
@@ -33,15 +56,14 @@ footer {
   left: 0;
   bottom: 0;
   width: 100%;
-  color: #222;
-  text-align: center;
+  color: white;
   padding: 5px;
 }
 
-footer *{
-  padding: 30px;
-  display: inline;
+footer li, a{
+  padding: 1vh;
   margin: 0 auto;
+  display: inline-grid;
 }
 
 /* End of Footer */
