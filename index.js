@@ -7,25 +7,44 @@ const elements = {
   'rain': ['./assets/images/rain.png', './assets/sounds/rain.mp3'],
   'thunder': ['./assets/images/thunder.png', './assets/sounds/thunder.mp3'],
   'wind': ['./assets/images/wind.png', './assets/sounds/wind.mp3'],
-  'wave': ['./assets/images/wave.png', './assets/sounds/wave.mp3'],
+  'wave': ['./assets/images/wave.png', './assets/sounds/wave.mp3']
 }
 
-// Manage the element icon and the display
 function displayElements(){
-  let i = 0;
   for (var key in elements) {
-    console.log([elements[key][0]]);
+    // Span element
     let span = document.createElement("span");
+    span.className = 'element';
+    // Images
     let img = document.createElement("img");
     img.src = elements[key][0];
-    img.id = 'element.'+i;
     span.appendChild(img);
+    // Sound
+    let audio = document.createElement("audio");
+    audio.src = elements[key][1];
+    audio.loop = 'loop';
+    audio.id = 'audio.'+key;
+    span.appendChild(audio);
+    // Input range for volume
+    let volume = document.createElement('input');
+    volume.type = 'range'
+    volume.min = 0;
+    volume.max = 100;
+    volume.step = "1";
+    volume.defaultValue = 0;
+    volume.id = key
+    volume.addEventListener('change', (event) => {
+      changeVolume(event);
+    });
+    span.appendChild(volume);
+    // Add span to dom
     document.querySelector('#elements').append(span);
-    i++;
   }
 }
-// Managing of sound
 
-
-
-
+function changeVolume(event){
+  let audio = document.getElementById('audio.'+event.target.id);
+  let volumeValue = document.getElementById(event.target.id).value;
+  audio.volume = (parseFloat(volumeValue).toFixed(2))/100;
+  audio.play();
+}

@@ -42,12 +42,29 @@ img {
 } 
 /* End of Images */
 
-/* Main */
-pomodoro {
-  height: 50%;
+/* Container */
+#container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
 }
 
-/* End of Main */
+.pomodoro {
+  border: 2px solid white;
+  width: 100%;
+  margin-bottom: 25vh;
+}
+
+.elements {
+  border: 2px solid black;
+  flex-grow: 1;
+  flex-wrap: wrap;
+}
+.elements span{
+  margin: 10px;
+}
+
+/* End of Container */
 
 /* Footer */
 
