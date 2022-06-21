@@ -13,18 +13,18 @@ const elements = {
 function displayElements(){
   for (var key in elements) {
     // Span element
-    let span = document.createElement("span");
-    span.className = 'element';
+    let div = document.createElement("div");
+    div.className = 'element';
     // Images
     let img = document.createElement("img");
     img.src = elements[key][0];
-    span.appendChild(img);
+    div.appendChild(img);
     // Sound
     let audio = document.createElement("audio");
     audio.src = elements[key][1];
     audio.loop = 'loop';
     audio.id = 'audio.'+key;
-    span.appendChild(audio);
+    div.appendChild(audio);
     // Input range for volume
     let volume = document.createElement('input');
     volume.type = 'range'
@@ -36,9 +36,9 @@ function displayElements(){
     volume.addEventListener('change', (event) => {
       changeVolume(event);
     });
-    span.appendChild(volume);
+    div.appendChild(volume);
     // Add span to dom
-    document.querySelector('#elements').append(span);
+    document.querySelector('#elements').append(div);
   }
 }
 

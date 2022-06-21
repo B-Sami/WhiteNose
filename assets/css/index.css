@@ -5,10 +5,10 @@ body {
   font-family: sans-serif;
   margin-top: 80px;
   padding: 30px;
-  animation: myfirst 20s infinite;
+  animation: changeColor 20s infinite;
 }
 
-@keyframes myfirst
+@keyframes changeColor
 {
   0%      {background:#2A80BA;}
   25%     {background:#F9BE14;}
@@ -47,6 +47,7 @@ img {
   display: flex;
   flex-direction: column;
   text-align: center;
+  justify-content: center;
 }
 
 .pomodoro {
@@ -56,14 +57,20 @@ img {
 }
 
 .elements {
-  border: 2px solid black;
-  flex-grow: 1;
-  flex-wrap: wrap;
-}
-.elements span{
-  margin: 10px;
+  display: flex;
+
 }
 
+.element img{
+  width: 80%;
+}
+
+.element input{
+  width: 80%;
+}
+input[type=range]::-webkit-slider-runnable-track {
+  background: #FFFFFF;
+}
 /* End of Container */
 
 /* Footer */
